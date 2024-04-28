@@ -16,7 +16,6 @@ import sg.edu.np.mad.mad_prac2.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Define the TAG variable at the class level
     private static final String TAG = "MainActivity";
 
     @Override
@@ -30,33 +29,27 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        //Initialize a new User object
         User user = new User("John Doe", "MAD Developer",1,false);
 
-        // Get the TextViews and buttons from the layout
-        TextView tvName = findViewById(R.id.textView); // Update to match the ID in your layout
-        TextView tvDescription = findViewById(R.id.textView1); // Update to match the ID in your layout
+        TextView tvName = findViewById(R.id.textView); 
+        TextView tvDescription = findViewById(R.id.textView1); 
         Button btnFollow = findViewById(R.id.button1);
 
-        // Set the TextViews with the user's name, description and default button message
         tvName.setText(user.name);
         tvDescription.setText(user.description);
         btnFollow.setText("FOLLOW");
 
-        // Set the click listener for the button
         btnFollow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Check the current text of the button
                 String buttonText = btnFollow.getText().toString();
 
-                // Toggle between "Follow" and "Unfollow"
                 if (buttonText.equals("FOLLOW")) {
                     btnFollow.setText("Unfollow");
-                    Log.i(TAG, "Unfollow"); // Use the TAG variable defined in the class
+                    Log.i(TAG, "Unfollow"); 
                 } else {
                     btnFollow.setText("FOLLOW");
-                    Log.i(TAG, "Follow"); // Use the TAG variable defined in the class
+                    Log.i(TAG, "Follow"); 
                 }
             }
         });
